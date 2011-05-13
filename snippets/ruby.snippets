@@ -1,2 +1,29 @@
+# Nice debugging print
 snippet deb
 	puts ">>>> ${1:var}: #{$1.inspect}"${2}
+
+# Gemspec for simple gems:
+snippet gemspec
+	Gem::Specification.new do |s|
+		s.name = "${1:name}"
+		s.version = "0.0.1"
+
+		s.required_rubygems_version = Gem::Requirement.new(">=0") if s.respond_to? :required_rubygems_version=
+		s.specification_version = 2 if s.respond_to? :specification_version=
+
+		s.author = "${2:author}"
+		s.email = "${3:email}"
+
+		s.description =<<-DESCRIPTION
+			${4:description}
+		DESCRIPTION
+		s.summary = "${5:summary}"
+		# s.homepage = "http://github.com/cespare/..."
+		s.rubyforge_project = "$1"
+
+		s.executables = %w(${6:executables})
+		s.files = %w(
+			${7:files}
+		)
+		# s.add_dependency("somelib", ">=0.1.2")
+	end${8}
