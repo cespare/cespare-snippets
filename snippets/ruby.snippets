@@ -4,6 +4,9 @@ snippet deb
 # Colored debugging print
 snippet debc
 	puts "\033[01;34m>>>> ${1:var}: #{$1.inspect}\e[m"${2}
+# Colored debugging tap
+snippet tap
+	.tap { |o| "\033[01;34m>>>> #{$1.inspect}\e[m" }${2}
 # Awesome print debugging output
 snippet ap
 	puts ">>>> ${1:var}:"; awesome_print $1${2}
