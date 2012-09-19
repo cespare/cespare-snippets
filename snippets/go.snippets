@@ -1,0 +1,6 @@
+# Debugging print.
+snippet deb
+	fmt.Printf(">>>> ${1:var}: %v\n", $1)${2}
+# Colored debugging print
+snippet debc
+	fmt.Printf("\033[01;34m>>>> ${1:var}: %v\x1B[m\n", $1)${2}
