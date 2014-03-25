@@ -7,3 +7,5 @@ snippet debc
 # Quickly write http.HandleFuncs
 snippet handle
 	func ${1:Name}(w http.ResponseWriter, r *http.Request) {${2}
+snippet spew
+	spew.Printf("\033[01;32m>>>> ${1:var}: %#+v\x1B[m\n", $1)${2}
