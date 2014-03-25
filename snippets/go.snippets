@@ -8,4 +8,4 @@ snippet debc
 snippet handle
 	func ${1:Name}(w http.ResponseWriter, r *http.Request) {${2}
 snippet spew
-	spew.Printf("\033[01;32m>>>> ${1:var}: %#+v\x1B[m\n", $1)${2}
+	fmt.Printf("\033[01;32m>>>> ${1:var}:\n%s<<<<\x1B[m\n", spew.Sdump($1))${2}
