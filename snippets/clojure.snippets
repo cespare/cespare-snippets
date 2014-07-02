@@ -1,0 +1,6 @@
+# Debugging print.
+snippet deb
+	(println ">>>> ${1:var}:" $1)${2}
+# Colored debugging print
+snippet debc
+	(println "\033[01;34m>>>> ${1:var}:" $1 "\033[0m")${2}
