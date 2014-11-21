@@ -17,3 +17,20 @@ snippet gof
 	go func() {
 		${1}
 	}()
+snippet terr
+	if err != nil {
+		t.Fatal(err)
+	}
+snippet terrf
+	if err != nil {
+		t.Fatalf("${1:message}", err)
+	}${0}
+snippet wantgot
+	if want != got {
+		t.Fatalf("want: %v\n; got: %v", want, got)
+	}
+snippet assert
+	if ${1:got} != ${2:want} {
+		t.Fatalf("want: %v; got: %v", $2, $1)
+	}
+	${0}
