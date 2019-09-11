@@ -7,11 +7,21 @@ snippet debc
 # Quickly write http.HandleFuncs
 snippet handle
 	func ${1:Name}(w http.ResponseWriter, r *http.Request) {${2}
-snippet spew
-	fmt.Printf("\033[01;32m>>>> ${1:var}:\n%s<<<<\x1B[m\n", spew.Sdump($1))${2}
 snippet errn
 	if err != nil {
 		return ${1}
+	}
+snippet lf
+	if err != nil {
+		log.Fatal(err)
+	}
+snippet lfn
+	if err != nil {
+		log.Fatalln("${0}
+	}
+snippet lff
+	if err != nil {
+		log.Fatalf("${0}
 	}
 snippet gof
 	go func() {
